@@ -1,21 +1,15 @@
 // @format
-class HelloWorld extends React.Component {
+class Content extends React.Component {
+  getUrl() {
+    return 'http://webapplog.com';
+  }
+
   render() {
-    return /*#__PURE__*/React.createElement("h1", this.props, "Hello ", this.props.frameworkName, " world!!!");
+    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", null, "Your REST API URL is:", /*#__PURE__*/React.createElement("a", {
+      href: this.getUrl()
+    }, this.getUrl())));
   }
 
 }
 
-ReactDOM.render( /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(HelloWorld, {
-  id: "ember",
-  frameworkName: "Ember.js",
-  title: "A framework for creating ambitious web applications."
-}), /*#__PURE__*/React.createElement(HelloWorld, {
-  id: "backbone",
-  frameworkName: "Backbone.js",
-  title: "Backbone.js gives structure to web applications..."
-}), /*#__PURE__*/React.createElement(HelloWorld, {
-  id: "angular",
-  frameworkName: "Angular.js",
-  title: "Superheroic JavaScript MVW Framework"
-})), document.getElementById('content'));
+ReactDOM.render( /*#__PURE__*/React.createElement(Content, null), document.getElementById('content'));
